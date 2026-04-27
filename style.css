@@ -32,8 +32,14 @@ body {
   background: var(--bg);
   line-height: 1.75;
   font-size: 17px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image: url("bg.jpg");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
