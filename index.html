@@ -107,14 +107,19 @@
 
         <!-- Clay Trinkets -->
         <div class="product-card product-card--wide">
-          <div class="trinkets-gallery">
-            <img src="gallery/IMG-20260427-WA0009.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0010.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0011.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0012.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0013.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0014.jpg" alt="Handmade trinket" class="gallery-img" />
-            <img src="gallery/IMG-20260427-WA0015.jpg" alt="Handmade trinket" class="gallery-img" />
+          <div class="carousel">
+            <button class="carousel-btn carousel-btn--prev" onclick="moveCarousel(-1)">&#8592;</button>
+            <div class="carousel-track-wrap">
+              <div class="carousel-track" id="carouselTrack">
+                <img src="gallery/IMG-20260427-WA0010.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0011.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0012.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0013.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0014.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0015.jpg" alt="Handmade trinket" class="carousel-img" />
+              </div>
+            </div>
+            <button class="carousel-btn carousel-btn--next" onclick="moveCarousel(1)">&#8594;</button>
           </div>
           <p class="product-label">Handmade · Made to order</p>
           <h3>Clay Trinkets</h3>
@@ -250,6 +255,16 @@
       </div>
     </div>
   </section>
+
+  <script>
+    let current = 0;
+    const track = document.getElementById('carouselTrack');
+    function moveCarousel(dir) {
+      const imgs = track.querySelectorAll('.carousel-img');
+      current = (current + dir + imgs.length) % imgs.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    }
+  </script>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
