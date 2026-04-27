@@ -420,8 +420,9 @@ a { color: inherit; text-decoration: none; }
 
 .carousel-img {
   min-width: 100%;
-  height: 340px;
+  height: 260px;
   object-fit: cover;
+  object-position: center;
   display: block;
   flex-shrink: 0;
 }
