@@ -111,16 +111,17 @@
             <button class="carousel-btn carousel-btn--prev" onclick="moveCarousel(-1)">&#8592;</button>
             <div class="carousel-track-wrap">
               <div class="carousel-track" id="carouselTrack">
-                <img src="gallery/IMG-20260427-WA0010.jpg" alt="Handmade trinket" class="carousel-img" />
-                <img src="gallery/IMG-20260427-WA0011.jpg" alt="Handmade trinket" class="carousel-img" />
-                <img src="gallery/IMG-20260427-WA0012.jpg" alt="Handmade trinket" class="carousel-img" />
-                <img src="gallery/IMG-20260427-WA0013.jpg" alt="Handmade trinket" class="carousel-img" />
-                <img src="gallery/IMG-20260427-WA0014.jpg" alt="Handmade trinket" class="carousel-img" />
-                <img src="gallery/IMG-20260427-WA0015.jpg" alt="Handmade trinket" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0010.jpg" data-caption="Felt Plushie" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0011.jpg" data-caption="Clay Trinkets" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0012.jpg" data-caption="Illustrations" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0013.jpg" data-caption="Custom Designs" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0014.jpg" data-caption="[Insects]" class="carousel-img" />
+                <img src="gallery/IMG-20260427-WA0015.jpg" data-caption="[Shark / Cats]" class="carousel-img" />
               </div>
             </div>
             <button class="carousel-btn carousel-btn--next" onclick="moveCarousel(1)">&#8594;</button>
           </div>
+          <p class="carousel-caption" id="carouselCaption">Felt Plushie</p>
           <p class="product-label">Handmade · Made to order</p>
           <h3>Clay Trinkets</h3>
           <p class="product-description">Custom sculpted clay pieces made to order. We discuss your idea, size, and references — then we bring it to life by hand, one detail at a time.</p>
@@ -130,23 +131,19 @@
         </div>
 
         <!-- Illustrations & Custom Designs -->
-        <div class="product-card">
-          <div class="product-image product-image--placeholder">Illustration photo coming soon</div>
-          <p class="product-label">Custom · Digital & Print</p>
+        <div class="product-card product-card--simple">
           <h3>Illustrations & Custom Designs</h3>
+          <div class="product-image product-image--placeholder">Photo coming soon</div>
           <p class="product-description">You give us a prompt and references if needed, we discuss the details, and then the illustration materializes into an artistic composition — delivered to you.</p>
-          <p class="product-benefits"><strong>For you if:</strong> you want original art made specifically for someone — a portrait, a scene, a feeling turned into image.</p>
           <p class="product-price">[Price]</p>
           <a href="#contact" class="cta-button secondary">Request yours</a>
         </div>
 
         <!-- Speed Poetry -->
-        <div class="product-card">
-          <div class="product-image product-image--placeholder">Poetry photo coming soon</div>
-          <p class="product-label">Written · One of a kind</p>
+        <div class="product-card product-card--simple">
           <h3>Speed Poetry</h3>
+          <div class="product-image product-image--placeholder">Photo coming soon</div>
           <p class="product-description">You give us a prompt. We interiorize the intention, let the words flow on paper, and deliver a short, meaningful poem crafted just for that person and that moment.</p>
-          <p class="product-benefits"><strong>For you if:</strong> you know exactly how you feel but can't find the words — let us find them for you.</p>
           <p class="product-price">[Price]</p>
           <a href="#contact" class="cta-button secondary">Commission a poem</a>
         </div>
@@ -259,10 +256,12 @@
   <script>
     let current = 0;
     const track = document.getElementById('carouselTrack');
+    const caption = document.getElementById('carouselCaption');
     function moveCarousel(dir) {
       const imgs = track.querySelectorAll('.carousel-img');
       current = (current + dir + imgs.length) % imgs.length;
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      caption.textContent = imgs[current].dataset.caption;
     }
   </script>
 
