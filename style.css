@@ -24,12 +24,19 @@
   --glow:         0 0 30px rgba(201,168,76,0.08);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--bg);
+}
 
 body {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   color: var(--ink);
-  background: var(--bg);
+  background: transparent;
   line-height: 1.75;
   font-size: 17px;
 }
@@ -105,7 +112,7 @@ a { color: inherit; text-decoration: none; }
 /* ===== SECTION BASE ===== */
 .section { padding: 6rem 1.5rem; position: relative; }
 
-.section:nth-child(even) { background: var(--bg-surface); }
+.section:nth-child(even) { background: rgba(26,18,8,0.80); }
 
 .container { max-width: 1080px; margin: 0 auto; }
 
@@ -156,7 +163,7 @@ a { color: inherit; text-decoration: none; }
   background:
     radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%),
     radial-gradient(ellipse at 20% 80%, rgba(107,30,46,0.15) 0%, transparent 50%),
-    var(--bg);
+    rgba(15,11,6,0.75);
   position: relative;
   overflow: hidden;
 }
@@ -344,7 +351,7 @@ a { color: inherit; text-decoration: none; }
 .cta-button.secondary:hover { color: var(--parchment); }
 
 /* ===== ABOUT ===== */
-.about { background: var(--bg-surface); }
+.about { background: rgba(26,18,8,0.80); }
 
 .about-grid {
   display: grid;
@@ -390,7 +397,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===== PRODUCTS ===== */
-.products { background: var(--bg); }
+.products { background: rgba(15,11,6,0.75); }
 
 .product-card--wide {
   grid-column: 1 / -1;
@@ -601,7 +608,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== TESTIMONIALS ===== */
 .testimonials {
-  background: var(--bg-surface);
+  background: rgba(26,18,8,0.80);
   position: relative;
 }
 
@@ -659,7 +666,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== SPECIAL OFFER ===== */
 .special-offer {
-  background: var(--bg);
+  background: rgba(15,11,6,0.75);
   text-align: center;
   position: relative;
 }
@@ -718,7 +725,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===== FAQ ===== */
-.faq { background: var(--bg-surface); }
+.faq { background: rgba(26,18,8,0.80); }
 
 .faq-list {
   max-width: 720px;
@@ -775,7 +782,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===== CONTACT ===== */
-.contact { background: var(--bg); }
+.contact { background: rgba(15,11,6,0.75); }
 
 .contact-cta {
   font-family: 'IM Fell English', serif;
